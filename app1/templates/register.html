@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Sign Up Form</title>
+
+    <!-- Meta tags 
+        -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet 
+        -->
+    <link rel="stylesheet" href= {% static 'css/style.css' %} type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="logo">
+            <a class="brand-logo" href="index.html">Sign Up Form</a>
+        </div>
+        <!-- main content -->
+            <div class="row map-content-9">
+                <div class="info-grids">
+                    <form  method="POST" class="">
+                    {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="input-field">
+                                <label>  Name </label>
+                                <input type="text" name="name" id="name" placeholder="Full Name" required="">
+                            </div>
+                            <div class="input-field">
+                                <label>  Email </label>
+                                <input type="email" name="email" id="email" placeholder="Username or Email" required="">
+                            </div>
+
+                            <div class="input-field">
+                                <label> Contact No </label>
+                                <input type="text" name="contact" id="Contact" placeholder="Contact" required="">
+                            </div>
+                          
+                            <div class="input-field">
+                                <label> Address </label>
+                                {% comment %} <input type="textarea" name="address" id="Password" placeholder="Address" required=""> {% endcomment %}
+                                <textarea name="address" id="" cols="30" rows="10"></textarea>
+                            </div>
+
+
+                            <div class="input-field">
+                                <label> Password</label>
+                                <input type="password" name="password" id="Password" placeholder="Password" required="">
+                            </div>
+                            <div class="input-field">
+                                <label> Confirm Password</label>
+                                <input type="password" name="Confirmpassword" id="Password" placeholder="Confirm Password" required="">
+                                
+                            </div>
+                          
+                        
+                        </div>
+                        <label class="check-remaind">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p class="remember">Remember Me</p>
+
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-style">Sign Up</button>
+                    </form>
+                    {% if already %}
+                       <script>
+                        alert("{{already}}")
+                       </script>
+                    {% endif %}
+                </div>
+                <div class="info-grids social-login-details align-self">
+                    {% comment %} <p class="text-center mb-3">Or login with</p> {% endcomment %}
+                    {% comment %} <div class="social-media">
+                        <a href="#facebook" class="fb"><span class="fa fa-facebook" aria-hidden="true"></span> Login
+                            with facebok</a>
+                        <a href="#twitter" class="tw"><span class="fa fa-twitter" aria-hidden="true"></span>
+                            Login with twitter</a> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    <p class="text-center mt-4">already have Account? <a href="login" target='_blank'>signin</a>
+                        here</p>
+                </div>
+            </div>
+           
+        <!-- //main content -->
+        <!-- footer -->
+        <div class="footer">
+            <p>&copy; 2023 Sign Up Form. All Rights Reserved | Design by Deep
+        </div>
+        <!-- footer -->
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src= {% static 'js/fontawesome.js' %}></script>
+
+        </body>
+
+</html>
